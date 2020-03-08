@@ -8,7 +8,6 @@ input[type="text"] {
 }
 
 #boardContainer {
-    background-color: greenyellow;
     width: 496px;
     height: 496px;
     position: relative;

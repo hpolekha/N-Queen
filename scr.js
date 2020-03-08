@@ -3,6 +3,7 @@ window.onload = function() {
     document.getElementById("my-btn").addEventListener("click", myFunction);
     document.getElementById("cellsInRow").addEventListener("change", changeCells);
     this.changeCells();
+    this.clearBoard(document.getElementById("cellsInRow").value);
 }
 
 
@@ -47,8 +48,8 @@ function firstAlgorithm(cellsInRow) {
     let info = document.getElementById('info');
     info.textContent = "The first algorithm was implemented";
     
-    clearBoard();
- 
+    clearBoard(cellsInRow);
+    
     let board = document.getElementById("boardContainer");
     for (let i = 0; i < result.length; ++i) {
         for (let j = 0; j < result.length; ++j) {
@@ -83,7 +84,7 @@ function secondAlgorithm(cellsInRow) {
     let info = document.getElementById('info');
     info.textContent = "The second algorithm was implemented";
     
-    clearBoard();
+    clearBoard(cellsInRow);
  
     let board = document.getElementById("boardContainer");
     for (let i = 0; i < result.length; ++i) {
@@ -101,13 +102,35 @@ function secondAlgorithm(cellsInRow) {
     }
 }
 
-function clearBoard() {
+function clearBoard(cellsInRow) {
     var board = document.getElementById("boardContainer");
     while (board.hasChildNodes()) {
         board.removeChild(board.childNodes[0]);
     }
+    createBoard(cellsInRow);
 }
 
 function changeCells() {
     document.getElementById("cellsInRowInfo").value = document.getElementById("cellsInRow").value;
+}
+
+function createBoard(cellsInRow) {
+    let board = document.getElementById("boardContainer");
+    board.style.width = (board.clientWidth - board.clientWidth % cellsInRow) + 'px';
+    board.style.height = board.style.width;
+    for (let i = 0; i < cellsInRow; ++i) {
+        for (let j = 0; j < cellsInRow; ++j) {
+            let img = new Image();
+            if ((i + j) % 2 == 1) {
+                img.src = "img/black.png";
+            } else {
+                img.src = "img/white.jpg";
+            }
+            img.width = board.clientWidth / cellsInRow;
+            img.height = board.clientHeight / cellsInRow;
+            img.style.left = img.width * i + 'px';
+            img.style.top = img.height * j + 'px';
+            board.appendChild(img);
+        } 
+    }
 }
