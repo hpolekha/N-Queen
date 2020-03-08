@@ -11,16 +11,20 @@
         <script src="algorithms/HillClimbing.js"></script>
         <script src="algorithms/SimulatedAnnealing.js"></script>
         <script src="algorithms/LocalBeamSearch.js"></script>        
-        <script src="algorithms/Generic.js"></script>
+        <script src="algorithms/GeneticAlgorithm.js"></script>
 
     </head>
     <body>
 
         <label for="algorithms">Choose an algorithm:</label>
         <select id="algorithms">
-            <option value="first">First one</option>
-            <option value="second">Second</option>
+            <option value="hillClimbing">Hill Climbing</option>
+            <option value="simulatedAnnealing">Simulated Annealing</option>
+            <option value="localBeamSearch">Local Beam Search</option>
+            <option value="geneticAlgorithm">Genetic Algorithm</option>
         </select>
+        <label for="parameters">Parameters</label>
+       <!-- <label >Parameters</label>  -->
         
         <label for="cellsInRow">Cells in row:</label>
         <input type="range" id="cellsInRow" min="4" max="12">
