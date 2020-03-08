@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="scr.js"></script>
+    </head>
+    <body>
+
+        <label for="algorithms">Choose an algorithm:</label>
+        <select id="algorithms">
+            <option value="first">First one</option>
+            <option value="second">Second</option>
+        </select>
+        
+        <label for="cellsInRow">Cells in row:</label>
+        <input type="range" id="cellsInRow" min="4" max="12" onchange="changeCells">
+        <input type="number" id="cellsInRowInfo" value="" readonly="true">
+
+        <input type="button" id="my-btn" value="do it!">
+        
+        <div><span id="info"></span></div>
+    
+        <div id="boardContainer"></div>
+
+    </body>
+</html>

@@ -1,0 +1,19 @@
+*:not(img) {
+    display: block;
+    margin: 10px;
+}
+
+input[type="text"] {
+    width: 250px;
+}
+
+#boardContainer {
+    background-color: greenyellow;
+    width: 496px;
+    height: 496px;
+    position: relative;
+}
+
+img {
+    position: absolute;
+}
